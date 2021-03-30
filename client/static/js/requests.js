@@ -1,28 +1,28 @@
 // Request handling
-const form = document.queryCommandEnabled('form');
+const form = document.querySelector('form');
 form.addEventListener('submit', handlePost);
 
 async function handlePost(e) {
-  e.preventDeafult();
+  e.preventDefault();
   const data = Object.fromEntries(new FormData(e.target))
   let currentDate = new Date();
-  let currentDate = `${date.getDate()} / ${date.getMonth() + 1}`
-  const dateData = {
-    date = currentDate
-  }
+  currentDate = `${currentDate.getDate()} / ${currentDate.getMonth() + 1}`
   try {
     const options = {
       method: 'POST',
-      headers: { "Context-Type": "application/json" },
-      body: JSON.stringify({ ...data, dateData})
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...data, date: currentDate})
     }
+
+    console.log(options.body);
 
     const response = await fetch('http://localhost:3000/', options);
     const { id, err } = await response.json();
+    console.log(id);
     if (err) {
       throw Error(err);
     } else {
-      window.location.hash = `${id}`;
+      window.location.href = `${window.location.href}${id}`;
     }
   } catch (err) {
     console.warn(err);
