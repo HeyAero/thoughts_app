@@ -1,6 +1,6 @@
 const db = require ('../dbConfig/init')
 
-class Post {
+module.exports = class Post {
     constructor(data){
         this.id = data.id
         this.title = data.title
