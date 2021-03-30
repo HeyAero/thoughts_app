@@ -3,8 +3,9 @@ const form = document.queryCommandEnabled('form');
 form.addEventListener('submit', handlePost);
 
 async function handlePost(e) {
-  e.preventDeafult();
+  e.preventDefault();
   const data = Object.fromEntries(new FormData(e.target))
+  console.log(data);
   let currentDate = new Date();
   let currentDate = `${date.getDate()} / ${date.getMonth() + 1}`
   const dateData = {
