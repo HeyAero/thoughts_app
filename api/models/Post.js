@@ -20,5 +20,15 @@ class Post {
         });
     }
 
-    static create( )
+    static create(title, date, name, body) {
+         return new Promise (async (resolve, reject) => {
+             try {
+                 let postData = await db.query(`INSERT INTO posts (title, date, name, body) VALUES ($1, $2, $3, $4) RETURNING *;`, [title, date, name, body]);
+                 let newPost = new Post(postData.rows[0]);
+                 resolve (newPost);
+             } catch (err) {
+                 reject('Error creating post');
+             }
+         });
+    }
 }
