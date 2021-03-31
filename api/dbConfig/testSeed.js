@@ -1,1 +1,6 @@
-// Reading SQL file and invoking it
+const db = require('./init');
+const fs = require('fs');
+
+const seeds = fs.readFileSync(__dirname + '/test_seeds.sql').toString();
+
+db.query(seeds, () => console.log("Dev database seeded"));
