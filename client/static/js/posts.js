@@ -5,7 +5,7 @@ async function loadPost(hash) {
     let postData = await getPost(hash);
     console.log(postData);
     if (postData.err) {
-        document.getElementById('postName').textContent = "Error post not found";
+        document.getElementById('postTitle').textContent = "Error post not found";
     } else {
         document.getElementById('postTitle').textContent = `${postData.date} > ${postData.name} > ${postData.title}`;
         document.getElementById('postBody').textContent = postData.body;
