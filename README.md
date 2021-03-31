@@ -1,5 +1,6 @@
 ![I need a <br/>](https://i.imgur.com/Up0POfW.png)
-By Aaron, James & Ravil
+
+##By Aaron, James & Ravil
 
 ## Initallation Instructions
 Our app is to be run on your local machine so do the following:
