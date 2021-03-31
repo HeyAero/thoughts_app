@@ -1,5 +1,5 @@
 // Displaying a post
-function loadPost(hash) {
+async function loadPost(hash) {
     postData = await getPost(hash);
     document.getElementById('postTitle').textContent = postData.title;
     document.getElementById('postName').textContent = postData.name;
