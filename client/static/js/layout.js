@@ -2,6 +2,7 @@
 const formArea = document.querySelector('#form-area');
 const postArea = document.querySelector('#post')
 window.addEventListener('hashchange', updateContent);
+window.addEventListener('load', updateContent)
 
 function updateView(hash) {
   if (hash) {
