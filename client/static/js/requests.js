@@ -22,7 +22,7 @@ async function handlePost(e) {
     if (err) {
       throw Error(err);
     } else {
-      window.location.href = `${window.location.href}#${id}`;
+      window.location.hash = `${id}`;
     }
   } catch (err) {
     console.warn(err);
