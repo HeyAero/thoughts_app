@@ -16,7 +16,6 @@ async function goToPost(req, res) {
 // "add a post" route
 async function newPost(req, res) {
     try {
-        console.log(req.body);
         const post = await Post.create(req.body.title, req.body.date, req.body.name, req.body.body)
         res.status(201).json(post)
     } catch(err) {
